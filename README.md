@@ -48,7 +48,7 @@
 <p>3. <b>默认采用最新版实验型协议————akarrin 系列，抗封锁能力较强，目前只有 Windows 客户端支持，手机/路由器均不能用，但仍然强烈建议使用</b>，下载链接：<a href="https://github.com/leitbogioro/ShadowsocksRR-Install/files/2127044/ShadowsocksR-win-4.9.0.zip-dev.zip">ShadowsocksR-win-4.9.0.zip-dev</a>。</p>
 <p>Use akarrin series protocol as ShadowSocksR's config, <b>I recommend this protocol because it has strong anti-blocking ability but it can only supported on Windows and doesn't work on smartphone or wireless-router.</b>Press it to download: <a href="https://github.com/leitbogioro/ShadowsocksRR-Install/files/2127044/ShadowsocksR-win-4.9.0.zip-dev.zip">ShadowsocksR-win-4.9.0.zip-dev</a>.</p>
 <br />
-<p>4. <b>可快速直观地生成、查看客户端配置信息，无需费劲巴拉地手动修改 config.json 文件。</p>
+<p>4. <b>可快速直观地生成、查看客户端配置信息，无需费劲巴拉地手动修改 config.json 文件。</b></p>
 <p><b>You can quickly and intuitively generate, look up client configurate information instead of manually modifiy a fuckin "config.json" which you don't have any patient to deal with!</b></p>
 <br />
 <p>5. <b>专为 CentOS 6/7 解决了复杂的二维码生成组件配置环境（你知道我 TM 花了多大劲吗！）</b>，你可以在 CentOS 系统上愉快地使用它们。</p>
@@ -103,17 +103,26 @@
 
 <h2><a id="Updates">更新日志（Updates）：</a></h2>
 <ul>
+<li>更新 libsodium 组件至 1.0.18。（2020.7.1）</li>
+<p>Update libsodium componet to 1.0.18.(2020.7.1)</p>
+<li>检测是否已有配置文件，有则在升级前备份，并在升级后恢复，以防程序升级后原有配置被重写造成错乱。(2019.11.7)</li>
+<p>Check if the configuration existes, installer will backup it before update and restore it after update instead of configuration will be rewrited by update program and causes confusion.(2019.11.7)</p>
+<li>安装程序逻辑错误修复。(2019.11.6)</li>
+<p>Fix installer illogical bugs.(2019.11.6)</p>
+<li>经测试，如果长时间多终端一起使用，该程序的日志文件体积会快速膨胀并大量占用主机磁盘空间，故在维护组件里加入每周清空程序日志的功能。(2019.11.6)</li>
+<p>If there are many devices connect to one ShadowSocksR server for a long time, the log on server will occupy an inconceivable disk space. So I add an function about log purge in maintain component which executes weekly.(2019.11.6)</p>
+<li>将计划任务中的每周重启一次任务整合至维护组件内运行。(2019.11.5)</li>
+<p>Put restart command into a component calls 'maintain' and it will execute weekly.(2019.11.5)</p>
+<li>Withdraw config UUID function.(2019.6.3)</li>
+<p>撤销修改 UUID 功能。(2019.6.3)</p>
 <li>Update config UUID.(2019.6.2)</li>
 <p>更新自定义 UUID 的功能。(2019.6.2)</p>    
-<li>Update config path parameter in websocket transport mode.(2019.6.2)</li>
-<p>更新 Websocket 模式下添加 path 参数的功能。(2019.6.2)</p>
 <li>修复了因判断逻辑错误，CentOS 无法正确安装的问题。（2019.4.10）</li>
 <p>Fix a bug that can't install on CentOS.(2019.4.10)</p>
 <li>修复了通过 https 网站调用 IP 地址时脚本出错的问题。（2019.4.2）</li>
 <p>Fix a bug that when getting IP address from a https website, there will go a wrong with script.(2019.4.2)</p>
 <li>更新 libsodium 组件至 1.0.17。（2019.3.25）</li>
 <p>Update libsodium componet to 1.0.17.(2019.3.25)</p>
-<li>添加重定向功能的英文描述（2018.12.20）</li>
 <li>添加检测阿里云进程的逻辑，一旦您尝试在预装了阿里云监控服务的环境中安装，安装会立即退出。（2018.12.21）</li>
 <p>Add a function to doubt whether your environment has installed Aliyun/AlibabaCloud's monitor process and once these has been detected, installation of ShadowSocksR will been suspend.(2018.12.21)</p>
 <li>添加重定向功能的英文描述（2018.12.20）</li>
